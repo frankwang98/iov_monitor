@@ -22,6 +22,7 @@ function randomNumBoth(min: number, max: number): number {
 }
 
 export default [
+  // 接口模拟和数据填充
   // 左上
   {
     url: "/IoTScreen/countUserNum",
@@ -30,16 +31,16 @@ export default [
       const data = Mock.mock({
         success: true,
         data: {
-          alarmNum: "@integer(1, 600)",
+          alarmNum: "@integer(1, 100)",
           offlineNum: "@integer(0, 30)",
-          totalNum: 480,
+          totalNum: 280,
         },
       });
       data.data.onlineNum = data.data.totalNum - data.data.offlineNum;
       return data;
     },
   },
-  // 左中
+  // 左下
   {
     url: "/IoTScreen/leftBottom",
     type: "get",
@@ -47,11 +48,11 @@ export default [
       const data = Mock.mock({
         success: true,
         data: {
-          "list|20": [
+          "list|10": [
             {
-              "provinceName": "福建省",
-              "cityName": "厦门市",
-              "countyName": "金砖未来创意园",
+              "provinceName": "JS省",
+              "cityName": "SZ市",
+              "countyName": "车联网产业园",
               "createTime": "2022-11-05 @datetime('HH:mm:ss')",
               "deviceId": "6c512d754bbcd6d7cd86abce0e0cac58",
               "gatewayno|+1": 10000,
@@ -63,7 +64,7 @@ export default [
       return data;
     },
   },
-  // 左下
+  // 左上中
   {
     url: "/IoTScreen/countDeviceNum",
     type: "get",
@@ -71,9 +72,9 @@ export default [
       const data = Mock.mock({
         success: true,
         data: {
-          alarmNum: "@integer(1, 600)",
+          alarmNum: "@integer(1, 100)",
           offlineNum: "@integer(0, 30)",
-          totalNum: 480,
+          totalNum: 280,
         },
       }).data;
       data.onlineNum = data.totalNum - data.offlineNum;
@@ -110,16 +111,16 @@ export default [
         data: [
           { value: "27.8", name: "温度" },
           { value: "34.7", name: "湿度" },
-          { value: "109", name: "光照" },
+          { value: "79", name: "光照" },
           { value: "22", name: "空气质量" },
           { value: "57.6", name: "噪音" },
-          { value: "736.6", name: "二氧化碳浓度" },
+          { value: "36.6", name: "二氧化碳浓度" },
         ],
       };
       return data;
     },
   },
-  // 红灯数据提示图
+  // 右下 红灯数据提示图
   {
     url: "/IoTScreen/rightBottom",
     type: "get",
@@ -127,7 +128,7 @@ export default [
       const data = Mock.mock({
         success: true,
         data: {
-          "list|40": [
+          "list|20": [
             {
               "alertdetail": "有车辆闯红灯",
               "alertname|1": ["闯红灯警告", "车速过快报警"],
@@ -138,9 +139,9 @@ export default [
               "phase": "A1",
               // 车牌信息
               "sbInfo|1": "@csentence(10,18)",
-              "terminalno": "闽A·@integer(00000, 99999)",
-              "provinceName": "福建省",
-              "cityName": "厦门市",
+              "terminalno": "苏A·@integer(00000, 99999)",
+              "provinceName": "JS省",
+              "cityName": "SZ市",
               "countyName": "@county()",
             },
           ],
@@ -149,6 +150,7 @@ export default [
       return data;
     },
   },
+  // 安装计划
   {
     url: "/IoTScreen/installationPlan",
     type: "get",
@@ -172,6 +174,7 @@ export default [
       return { success: true, data };
     },
   },
+  // 中间 地图显示
   {
     url: "/IoTScreen/centerMap",
     type: "get",
@@ -181,10 +184,10 @@ export default [
         const data = Mock.mock({
           success: true,
           data: {
-            "dataList|100": [
+            "dataList|10": [
               {
                 name: "@city()",
-                value: "@integer(1, 1000)",
+                value: "@integer(1, 100)",
               },
             ],
             "regionCode": params.regionCode,
@@ -195,10 +198,10 @@ export default [
         const data = Mock.mock({
           success: true,
           data: {
-            "dataList|12": [
+            "dataList|15": [
               {
                 name: "@province()",
-                value: "@integer(1, 1100)",
+                value: "@integer(1, 100)",
               },
             ],
             "regionCode": "china",

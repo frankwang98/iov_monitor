@@ -3,6 +3,7 @@ import type { MockParams } from "./index.d";
 import MockIndex from "./mock-index";
 
 Mock.setup({
+  // 刷新时间
   timeout: 300,
 });
 

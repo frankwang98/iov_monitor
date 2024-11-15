@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "description": "显示大屏",
-  "author": "Kirk Lin <https://github.com/kirklin>",
+  "author": "frankwang98 ref this <https://github.com/kirklin>",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
