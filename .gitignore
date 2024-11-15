@@ -1,3 +1,17 @@
+.vscode
+node_modules/
+package-lock.json
+
+# 忽略构建输出目录
+dist/
+
+# 忽略一些临时文件
+*.log
+*.env
+
+# pnpm 特定的缓存目录
+.pnpm/
+
 # Logs
 logs
 *.log
