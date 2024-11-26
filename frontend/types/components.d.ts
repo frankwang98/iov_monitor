@@ -10,7 +10,6 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     CapsuleChart: typeof import('./../src/components/datav/capsule-chart/capsule-chart.vue')['default']
-    CarMonitoring: typeof import('./../src/components/CarMonitoring.vue')['default']
     CountUp: typeof import('./../src/components/count-up/count-up.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElDrawer: typeof import('element-plus/es')['ElDrawer']
@@ -18,7 +17,6 @@ declare module '@vue/runtime-core' {
     ElRadio: typeof import('element-plus/es')['ElRadio']
     ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
     EmptyCom: typeof import('./../src/components/empty-com/empty-com.vue')['default']
-    HelloWorld: typeof import('./../src/components/HelloWorld.vue')['default']
     ItemWrap: typeof import('./../src/components/item-wrap/item-wrap.vue')['default']
     MessageContent: typeof import('./../src/components/Plugins/MessageContent/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

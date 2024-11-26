@@ -8,7 +8,11 @@ node server.js
 
 cd frontend
 pnpm install
-pnpm run dev # build
+pnpm run dev # build(dist)
+
+# pack
+pnpm install http-server
+http-server
 ```
 
 ## run

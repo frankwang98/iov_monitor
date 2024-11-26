@@ -29,7 +29,7 @@ updateTime();
     <div class="right-bottom" />
     <div class="light" />
     <div class="title">
-      <span class="title-text">智慧交通(展示大屏)</span>
+      <span class="title-text">低速无人车智能车联网监控系统</span>
     </div>
     <div class="timers">
       {{ dateData.dateYear }} {{ dateData.dateWeek }} {{ dateData.dateDay }}
