@@ -5,7 +5,7 @@ import { optionHandle, regionCodes } from "./center.map";
 import type { MapdataType } from "./center.map";
 import { GETNOBASE, currentGET } from "~/api";
 
-// china 代表中国 其他地市是行政编码
+// china 其他地市是行政编码
 withDefaults(
   defineProps<{
     // 结束数值
@@ -20,6 +20,7 @@ const CHINA_CODE = "china";
 const option = ref({});
 const code = ref(CHINA_CODE);
 
+// get geo json
 const getGeoJson = async (regionCode: string) => {
   let mapjson = getMap(regionCode);
   if (mapjson) {
@@ -35,6 +36,7 @@ const getGeoJson = async (regionCode: string) => {
   return mapjson;
 };
 
+// set data
 const dataSetHandle = async (regionCode: string, list: object[]) => {
   const geojson: any = await getGeoJson(regionCode);
   const cityCenter: any = {};
@@ -57,6 +59,7 @@ const dataSetHandle = async (regionCode: string, list: object[]) => {
   option.value = optionHandle(regionCode, list, mapData);
 };
 
+// get data
 const getData = async (regionCode: string) => {
   currentGET("centerMap", { regionCode }).then((res) => {
     if (res.success) {
@@ -81,7 +84,7 @@ const mapClick = (params: any) => {
   <div class="centerMap">
     <div class="mapWrap">
       <div v-if="code !== CHINA_CODE" class="quanguo" @click="getData(CHINA_CODE)">
-        中国
+        China
       </div>
       <VChart
         v-if="JSON.stringify(option) !== '{}'"

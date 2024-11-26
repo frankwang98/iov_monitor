@@ -57,7 +57,8 @@ export default defineConfig((): UserConfig => {
       port: 8888,
       open: true,
       strictPort: false,
-      // proxy: {}
+      // 配置后端接口代理
+      proxy: {}
     },
     resolve: {
       alias: {

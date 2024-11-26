@@ -5,6 +5,15 @@ const ping = require('ping');
 const os = require('os'); 
 const { v4: uuidv4 } = require('uuid');
 const { machineIdSync } = require('node-machine-id');
+const bodyParser = require('body-parser');
+
+router.use(bodyParser.json());
+
+// 示例用户列表（可以替换为数据库查询） 
+const users = [ 
+    { username: 'admin', password: '123' }, 
+    { username: 'user2', password: 'password2' } 
+];
 
 router.get('/', (req, res) => {
     res.send('Hello IoT! Please use /ping to check the network status');
@@ -45,6 +54,18 @@ router.get('/uuid', (req, res) => {
         uuid: uniqueIdentifier, 
         macAddresses: macAddresses 
     });
+});
+
+// 登录接口 
+router.post('/api/login', (req, res) => { 
+    const { username, password } = req.body; 
+    // 查找用户 
+    const user = users.find(u => u.username === username && u.password === password); 
+    if (user) { 
+        res.json({ status: 'success', message: 'Login successful' }); 
+    } else { 
+        res.status(401).json({ status: 'error', message: 'Invalid username or password' }); 
+    } 
 });
 
 module.exports = router;

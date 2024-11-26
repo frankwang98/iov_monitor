@@ -5,6 +5,7 @@ import type { DateDataType } from "./index.d";
 import { useSettingStore } from "~/stores";
 import settingIcon from "~/assets/img/headers/setting.png";
 
+// 设置时间 reactive
 const dateData = reactive<DateDataType>({
   dateDay: "",
   dateYear: "",
@@ -14,6 +15,7 @@ const dateData = reactive<DateDataType>({
 
 const { setSettingShow } = useSettingStore();
 const weekdays = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
+// 获取当前时间
 const updateTime = () => {
   dateData.timing = setInterval(() => {
     dateData.dateDay = dayjs().format("YYYY-MM-DD hh:mm:ss");

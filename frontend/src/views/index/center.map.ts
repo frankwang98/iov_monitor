@@ -3,6 +3,7 @@ export interface MapdataType {
   name: string;
   value: [number, number, number]; // x,y,value  第一个x 第二个y  第三个value
 }
+
 export const optionHandle = (regionCode: string,
   list: object[],
   mapData: MapdataType[]) => {

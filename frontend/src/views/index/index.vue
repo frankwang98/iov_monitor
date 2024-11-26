@@ -13,38 +13,35 @@ import ItemWrap from "~/components/item-wrap";
 <template>
   <div class="index-box">
     <div class="content_left">
-      <ItemWrap class="content_left-top content_lr-item" title="传感器总览">
+      <ItemWrap class="content_left-top content_lr-item" title="传感器数据">
         <LeftTop />
       </ItemWrap>
-      <ItemWrap class="content_left-center content_lr-item" title="交通灯总览">
-        <LeftCenter />
+
+      <!-- 修改位置 -->
+      <ItemWrap class="content_left-bottom content_lr-item" title="环境信息" style="padding: 0 10px 16px 10px">
+        <RightCenter /> 
       </ItemWrap>
-      <ItemWrap
-        class="content_left-bottom content_lr-item"
-        title="传感器提醒"
-        style="padding: 0 10px 16px 10px"
-      >
+
+      <ItemWrap class="content_left-bottom content_lr-item" title="传感器信息提醒" style="padding: 0 10px 16px 10px">
         <LeftBottom />
       </ItemWrap>
     </div>
+
     <div class="content_center">
       <CenterMap class="content_center_top" title="传感器分布图" />
-      <ItemWrap class="content_center-bottom items-center" title="道路路口信号灯">
+      <ItemWrap class="content_center-bottom items-center" title="路口交通信号灯">
         <CenterBottom />
       </ItemWrap>
     </div>
+
     <div class="content_right">
       <ItemWrap class="content_left-bottom content_lr-item" title="报警次数">
         <RightTop />
       </ItemWrap>
-      <ItemWrap
-        class="content_left-bottom content_lr-item"
-        title="道路环境信息"
-        style="padding: 0 10px 16px 10px"
-      >
-        <RightCenter />
+      <ItemWrap class="content_left-center content_lr-item" title="交通灯数据">
+        <LeftCenter />
       </ItemWrap>
-      <ItemWrap class="content_left-bottom content_lr-item" title="红灯数据提示图 ">
+      <ItemWrap class="content_left-bottom content_lr-item" title="交通信号灯信息提醒 ">
         <RightBottom />
       </ItemWrap>
     </div>

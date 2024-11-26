@@ -18,6 +18,7 @@ const state = reactive<any>({
   scroll: true,
 });
 
+// get data
 const getData = () => {
   currentGET("leftBottom", { limitNum: 20 }).then((res) => {
     // console.log("传感器提醒", res);
@@ -31,6 +32,8 @@ const getData = () => {
     }
   });
 };
+
+// handle address
 const addressHandle = (item: any) => {
   let name = item.provinceName;
   if (item.cityName) {

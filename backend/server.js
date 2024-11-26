@@ -3,12 +3,15 @@ const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
 const apiRoutes = require('./services/api');
+const cors = require('cors');
 
 const app = express();
 const server = http.createServer(app);
 const port = 3000;
 
 app.use(express.json());
+// 跨域资源共享
+app.use(cors());
 
 // 创建 HTTP 服务器
 app.use('/', apiRoutes);

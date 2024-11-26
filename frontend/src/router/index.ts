@@ -4,7 +4,7 @@ import type { RouteRecordRaw } from "vue-router";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    redirect: "/index",
+    redirect: "/login",
   },
   {
     path: "/home",
@@ -18,6 +18,11 @@ const routes: Array<RouteRecordRaw> = [
       },
     ],
   },
+  {
+    path: "/login",
+    name: "login",
+    component: () => import("~/views/LoginView.vue"),
+  }
 ];
 const router = createRouter({
   history: createWebHashHistory(),
