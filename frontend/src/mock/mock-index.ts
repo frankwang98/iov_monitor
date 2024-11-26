@@ -139,7 +139,7 @@ export default [
               "phase": "A1",
               // 车牌信息
               "sbInfo|1": "@csentence(10,18)",
-              "terminalno": "苏A·@integer(00000, 99999)",
+              "terminalno": "苏X·@integer(00000, 99999)",
               "provinceName": "JS省",
               "cityName": "SZ市",
               "countyName": "@county()",

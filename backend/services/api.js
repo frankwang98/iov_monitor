@@ -57,7 +57,7 @@ router.get('/uuid', (req, res) => {
 });
 
 // 登录接口 
-router.post('/api/login', (req, res) => { 
+router.post('/login', (req, res) => { 
     const { username, password } = req.body; 
     // 查找用户 
     const user = users.find(u => u.username === username && u.password === password); 
@@ -66,6 +66,23 @@ router.post('/api/login', (req, res) => {
     } else { 
         res.status(401).json({ status: 'error', message: 'Invalid username or password' }); 
     } 
+});
+
+// 模拟数据库中的数据
+const iotData = [
+  { value: "28.8", name: "温度" },
+  { value: "34.7", name: "湿度" },
+  { value: "79", name: "光照" },
+  { value: "22", name: "空气质量" },
+  { value: "57.6", name: "噪音" },
+  { value: "36.6", name: "二氧化碳浓度" },
+];
+
+router.get('/IoTScreen/rightCenter', (req, res) => {
+  res.json({
+    success: true,
+    data: iotData
+  });
 });
 
 module.exports = router;

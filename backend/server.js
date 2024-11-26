@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors());
 
 // 创建 HTTP 服务器
-app.use('/', apiRoutes);
+app.use('/api', apiRoutes);
 
 server.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

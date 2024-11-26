@@ -6,6 +6,7 @@ import CenterMap from "./center-map.vue";
 import CenterBottom from "./center-bottom.vue";
 import RightTop from "./right-top.vue";
 import RightCenter from "./right-center.vue";
+// import RightCenter from "./IotData.vue";
 import RightBottom from "./right-bottom.vue";
 import ItemWrap from "~/components/item-wrap";
 </script>

@@ -6,6 +6,14 @@ import { getLocalStorage } from "~/utils";
 
 const baseUrl = UtilVar.baseUrl;
 
+// 使用实际数据 testGET
+export const apiClient = axios.create({
+  baseURL: 'http://localhost:3000/api',
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+
 export { baseUrl };
 // axios.defaults.withCredentials = true;
 // 添加请求拦截器
@@ -33,8 +41,8 @@ export interface Params {
  */
 axios.interceptors.response.use((response: AxiosResponse) => {
   /**
-     * @code 登录过期 token验证失败 根据后端调
-     */
+   * @code 登录过期 token验证失败 根据后端调
+  */
   // console.log(response)
   if (response.status !== 200) {
     return Promise.reject(response);
@@ -61,6 +69,7 @@ axios.interceptors.response.use((response: AxiosResponse) => {
 const isEncryptionParam = (params: Params) => {
   return params;
 };
+
 /**
  * @description: get 请求方法
  * @param {string} url 请求地址

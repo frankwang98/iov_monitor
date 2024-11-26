@@ -1,4 +1,4 @@
-import { GET, GETNOBASE } from "./api";
+import { GET, GETNOBASE, apiClient } from "./api";
 import Index from "./modules";
 
 export { GETNOBASE };
@@ -13,4 +13,9 @@ export const urlObj: UrlObj = {
 type Keys = string | number;
 export const currentGET = (key: Keys, param?: any) => {
   return GET(urlObj[key], param || {});
+};
+
+
+export const testGET = (endpoint: string) => {
+  return apiClient.get(`/${endpoint}`);
 };

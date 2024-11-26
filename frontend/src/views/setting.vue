@@ -9,6 +9,7 @@ const rightBottomRadio = ref(true);
 const settingStore = useSettingStore();
 const { indexConfig } = storeToRefs(settingStore);
 const redTime = ref();
+// 初始化设置
 const init = () => {
   settingStore.initSetting();
   isScaleRadio.value = settingStore.isScale;
@@ -17,17 +18,20 @@ const init = () => {
   rightBottomRadio.value = indexConfig.value.rightBottomSwiper;
 };
 init();
+
+// 取消
 const cancelClick = () => {
   settingStore.setSettingShow(false);
 };
-
+// 确认
 const confirmClick = () => {
   settingStore.setSettingShow(false);
 };
+// 是否进行自动适配
 const isScaleChange = (flag: boolean) => {
   settingStore.setIsScale(flag);
 };
-
+// 选项卡切换
 const indexRadioChange = () => {
   settingStore.setIndexConfig({
     leftBottomSwiper: leftBottomRadio.value, // 左轮播

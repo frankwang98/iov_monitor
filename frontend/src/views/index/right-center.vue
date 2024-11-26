@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import CapsuleChart from "~/components/datav/capsule-chart";
-import { currentGET } from "~/api";
+import { currentGET, testGET } from "~/api";
 
 const config = ref({
   showValue: true,
@@ -20,6 +20,15 @@ const getData = () => {
       });
     }
   });
+  // 调用实际数据，用这个方法就好啦
+  // testGET("IoTScreen/rightCenter").then((res) => {
+  //   if (res.data.success) {
+  //     data.value = res.data.data;
+  //   } else {
+  //     window.$message({ text: res.data.msg, type: 'warning', });
+  //   }
+  // }).catch((error) => {
+  //   window.$message({ text: `Error: ${error.message}`, type: 'error', }); });
 };
 getData();
 </script>
